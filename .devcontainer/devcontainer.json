@@ -1,6 +1,6 @@
 {
   "name": "GSemirDev",
-  "dockerFile": "../.Dockerfile",
+  "dockerFile": "../Dockerfile",
   "extensions": ["dbaeumer.vscode-eslint", "esbenp.prettier-vscode"],
   "runArgs": [
     "--network=network1", // 方便连接数据库
