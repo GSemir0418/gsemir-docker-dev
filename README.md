@@ -1,6 +1,6 @@
 > 目标：使用 docker 搭建自用开发环境
 
-# 1 docker 核心概念：
+# 1 docker 核心概念
 
 - 核心概念主要包括`dockerfile`、`container`、`image`、`volume`
 
@@ -14,9 +14,11 @@
   ADD 复制宿主机文件
   ENV 添加环境变量
   WORKDIR 访问容器时的初始目录
+  VOLUME [指定匿名卷，防止run或rebuild时忘记-v绑定数据卷]
   ```
 
 - `image`(镜像)
+  
   - 相当于一张**系统盘**
 - `container`(容器)
   - 相当于一台**虚拟机**
@@ -48,7 +50,7 @@
   - 运行 image 启动 container
 
   ```sh
-  $ docker run -dit [image_tag] --name [container_name] -p [容器端口:宿主机端口] -e [环境变量=值] --network=net1
+  $ docker run -dit [image_tag] --name [container_name] -p [宿主机端口:容器端口] -e [环境变量=值] --network=net1
   $ docker run -v volume_name:/容器内需持久化的路径
   ```
 
